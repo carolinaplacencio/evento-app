@@ -24,6 +24,7 @@ public class DataConfiguration {
 	}
 	
 	//Configuraçao de Hibernate
+	@Bean
 	public JpaVendorAdapter jpaVendorAdapter() {
 		HibernateJpaVendorAdapter adapter = new HibernateJpaVendorAdapter();
 		adapter.setDatabase(Database.MYSQL);
@@ -32,7 +33,7 @@ public class DataConfiguration {
 		//Permite ao Hibernate criar as tabelas automaticamente
 		adapter.setGenerateDdl(true);
 		//Dialeto que será utilizado
-		adapter.setDatabasePlatform("org.hibernate.dialext.MySqlDialect");
+		adapter.setDatabasePlatform("org.hibernate.dialect.MySQL8Dialect");
 		adapter.setPrepareConnection(true);
 		return adapter;
 	}	
